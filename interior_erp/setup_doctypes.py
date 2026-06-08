@@ -194,7 +194,7 @@ def create_doctypes():
             print(f"DocType {d['name']} already exists.")
             
     try:
-        from interior_erp.interior_erp.setup_custom_fields import after_install
+        from interior_erp.setup_custom_fields import after_install
         after_install()
         print("Applied Custom Fields!")
     except Exception as e:

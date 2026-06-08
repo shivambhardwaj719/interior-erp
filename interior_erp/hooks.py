@@ -7,10 +7,10 @@ app_license = "mit"
 
 doc_events = {
     "Lead": {
-        "before_save": "interior_erp.interior_erp.custom.lead.before_save"
+        "before_save": "interior_erp.custom.lead.before_save"
     },
     "Purchase Receipt": {
-        "on_submit": "interior_erp.interior_erp.custom.purchase_receipt.on_submit"
+        "on_submit": "interior_erp.custom.purchase_receipt.on_submit"
     }
 }
 
@@ -18,15 +18,15 @@ doc_events = {
 
 scheduler_events = {
     "daily": [
-        "interior_erp.interior_erp.tasks.check_missed_followups",
-        "interior_erp.interior_erp.tasks.check_overdue_payments",
-        "interior_erp.interior_erp.tasks.refresh_active_budgets"
+        "interior_erp.tasks.check_missed_followups",
+        "interior_erp.tasks.check_overdue_payments",
+        "interior_erp.tasks.refresh_active_budgets"
     ]
 }
 
 override_doctype_dashboards = {
-    "Lead": "interior_erp.interior_erp.custom.lead_dashboard.get_data",
-    "Proposal BOQ": "interior_erp.interior_erp.custom.proposal_boq_dashboard.get_data"
+    "Lead": "interior_erp.custom.lead_dashboard.get_data",
+    "Proposal BOQ": "interior_erp.custom.proposal_boq_dashboard.get_data"
 }
 
 fixtures = [
@@ -47,4 +47,4 @@ fixtures = [
     {"dt": "Number Card", "filters": [["module", "=", "Interior Erp"]]},
     {"dt": "Dashboard Chart", "filters": [["module", "=", "Interior Erp"]]}
 ]
-after_install = 'interior_erp.interior_erp.setup_custom_fields.after_install'
+after_install = 'interior_erp.setup_custom_fields.after_install'
