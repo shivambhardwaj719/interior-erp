@@ -1,0 +1,58 @@
+version: "3.8"
+services:
+  frappe:
+    image: frappe/bench:latest
+    working_dir: /workspace
+    command: >
+      bash -c "
+      sudo chown -R frappe:frappe /workspace &&
+      if [ ! -d '/workspace/frappe-bench/apps/frappe' ]; then
+        echo 'Initializing Frappe Bench (this will take a few minutes)...' &&
+        bench init --skip-redis-config-generation --frappe-branch version-15 frappe-bench &&
+        cd frappe-bench &&
+        bench set-config -g db_host mariadb &&
+        bench set-config -g redis_cache redis://redis-cache:6379 &&
+        bench set-config -g redis_queue redis://redis-queue:6379 &&
+        bench set-config -g redis_socketio redis://redis-socketio:6379 &&
+        echo 'Fetching ERPNext...' &&
+        bench get-app erpnext --branch version-15 &&
+        echo 'Creating Site...' &&
+        bench new-site test.localhost --db-root-password admin --admin-password admin --mariadb-root-password admin &&
+        echo 'Installing ERPNext...' &&
+        bench --site test.localhost install-app erpnext;
+      else
+        cd frappe-bench;
+      fi &&
+      if [ ! -d '/workspace/frappe-bench/apps/interior_erp' ]; then
+        echo 'Installing Custom Interior ERP App...' &&
+        bench get-app interior_erp /workspace/custom_app &&
+        bench --site test.localhost install-app interior_erp;
+      fi &&
+      echo 'Starting Bench Server...' &&
+      bench start
+      "
+    ports:
+      - "8000:8000"
+      - "9000:9000"
+    volumes:
+      - frappe-vol:/workspace
+      - ./interior_erp:/workspace/custom_app
+
+  mariadb:
+    image: mariadb:10.6
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --skip-character-set-client-handshake --skip-innodb-read-only-compressed
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+    volumes:
+      - mariadb-vol:/var/lib/mysql
+
+  redis-cache:
+    image: redis:6.2-alpine
+  redis-queue:
+    image: redis:6.2-alpine
+  redis-socketio:
+    image: redis:6.2-alpine
+
+volumes:
+  frappe-vol:
+  mariadb-vol:

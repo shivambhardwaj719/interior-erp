@@ -44,29 +44,6 @@ bench clear-cache
 
 ---
 
-## ⚛️ Frontend (React Dashboard) Development
-
-The `project_analytics` page uses a modern Vite/React build system.
-
-1. Navigate to the frontend directory:
-   ```bash
-   cd apps/interior_erp/frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Run the development server (with hot module replacement):
-   ```bash
-   npm run dev
-   ```
-4. Build for production (compiles assets into `interior_erp/public/frontend`):
-   ```bash
-   npm run build
-   ```
-
----
-
 ## 📊 Modules Breakdown
 
 *   **Dashboard**: High-level system overview including the custom Vite React analytics.
