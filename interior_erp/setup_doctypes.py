@@ -184,6 +184,12 @@ def create_doctypes():
             ]
         }
     ]
+    if not frappe.db.exists("Module Def", "Interior Erp"):
+        doc = frappe.new_doc("Module Def")
+        doc.module_name = "Interior Erp"
+        doc.app_name = "interior_erp"
+        doc.insert(ignore_permissions=True)
+        print("Created Module Def: Interior Erp")
 
     for d in doctypes:
         if not frappe.db.exists("DocType", d["name"]):
