@@ -14,8 +14,8 @@ doc_events = {
     }
 }
 
-app_include_css = "interior_erp.bundle.css"
-app_include_js = "interior_erp.bundle.js"
+app_include_css = "/assets/interior_erp/css/interior_erp.css"
+app_include_js = "/assets/interior_erp/js/interior_erp.js"
 
 scheduler_events = {
     "daily": [
