@@ -14,7 +14,6 @@ doc_events = {
     }
 }
 
-app_include_css = "/assets/interior_erp/css/interior_erp.css"
 app_include_js = "/assets/interior_erp/js/interior_erp.js"
 
 scheduler_events = {
@@ -31,19 +30,12 @@ override_doctype_dashboards = {
 }
 
 fixtures = [
-    # M1 Custom Fields
     {"dt": "Custom Field", "filters": [["module", "=", "Interior Erp"]]},
     {"dt": "Property Setter", "filters": [["module", "=", "Interior Erp"]]},
-    
-    # M4 Workflow
     {"dt": "Workflow", "filters": [["name", "in", ["Proposal BOQ Approval", "Project Budget Approval"]]]},
     {"dt": "Workflow State", "filters": [["name", "in", ["Draft", "Pending Internal Approval", "Pending Client Approval", "Approved", "Rejected", "Pending Owner Approval", "Active"]]]},
     {"dt": "Workflow Action Master", "filters": [["name", "in", ["Submit for Review", "Approve Internally", "Reject Internally", "Client Approved", "Client Rejected", "Needs Revision"]]]},
-    
-    # M9 Notifications
     {"dt": "Notification", "filters": [["name", "in", ["Project Over Budget Alert", "New Interior Lead Assigned", "Send Proposal to Client", "New Material Request from Site"]]]},
-    
-    # M10 Dashboards
     {"dt": "Workspace", "filters": [["name", "=", "Interior Owner Dashboard"]]},
     {"dt": "Number Card", "filters": [["module", "=", "Interior Erp"]]},
     {"dt": "Dashboard Chart", "filters": [["module", "=", "Interior Erp"]]}
