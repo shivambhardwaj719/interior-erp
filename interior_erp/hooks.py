@@ -14,10 +14,7 @@ doc_events = {
     }
 }
 
-doctype_js = {
-    "Lead": "public/js/lead.js",
-    "Purchase Order": "public/js/purchase_order.js"
-}
+# doctype_js removed temporarily to bypass build error
 
 scheduler_events = {
     "daily": [
