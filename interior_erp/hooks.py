@@ -47,4 +47,3 @@ fixtures = [
     {"dt": "Number Card", "filters": [["module", "=", "Interior Erp"]]},
     {"dt": "Dashboard Chart", "filters": [["module", "=", "Interior Erp"]]}
 ]
-after_install = 'interior_erp.setup_custom_fields.after_install'
