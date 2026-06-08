@@ -1,0 +1,9 @@
+{
+    "css/interior_erp.bundle.css": [
+        "public/css/interior_erp.css"
+    ],
+    "js/interior_erp.bundle.js": [
+        "public/js/lead.js",
+        "public/js/purchase_order.js"
+    ]
+}
