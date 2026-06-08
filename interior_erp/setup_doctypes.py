@@ -6,7 +6,7 @@ def create_doctypes():
         {
             "doctype": "DocType",
             "name": "Site Visit Room",
-            "module": "interior_erp",
+            "module": "Interior Erp",
             "custom": 1,
             "istable": 1,
             "fields": [
@@ -20,7 +20,7 @@ def create_doctypes():
         {
             "doctype": "DocType",
             "name": "Site Visit",
-            "module": "interior_erp",
+            "module": "Interior Erp",
             "custom": 1,
             "is_submittable": 1,
             "naming_rule": "Expression",
@@ -39,7 +39,7 @@ def create_doctypes():
         {
             "doctype": "DocType",
             "name": "BOQ Item",
-            "module": "interior_erp",
+            "module": "Interior Erp",
             "custom": 1,
             "istable": 1,
             "fields": [
@@ -56,7 +56,7 @@ def create_doctypes():
         {
             "doctype": "DocType",
             "name": "Proposal BOQ",
-            "module": "interior_erp",
+            "module": "Interior Erp",
             "custom": 1,
             "is_submittable": 1,
             "naming_rule": "Expression",
@@ -78,7 +78,7 @@ def create_doctypes():
         {
             "doctype": "DocType",
             "name": "Project Payment",
-            "module": "interior_erp",
+            "module": "Interior Erp",
             "custom": 1,
             "naming_rule": "Expression",
             "autoname": "PAY-.YYYY.-.####",
@@ -98,7 +98,7 @@ def create_doctypes():
         {
             "doctype": "DocType",
             "name": "Site Labor Log",
-            "module": "interior_erp",
+            "module": "Interior Erp",
             "custom": 1,
             "istable": 1,
             "fields": [
@@ -111,7 +111,7 @@ def create_doctypes():
         {
             "doctype": "DocType",
             "name": "Daily Site Diary",
-            "module": "interior_erp",
+            "module": "Interior Erp",
             "custom": 1,
             "is_submittable": 1,
             "naming_rule": "Expression",
@@ -131,7 +131,7 @@ def create_doctypes():
         {
             "doctype": "DocType",
             "name": "Project Budget Item",
-            "module": "interior_erp",
+            "module": "Interior Erp",
             "custom": 1,
             "istable": 1,
             "fields": [
@@ -145,7 +145,7 @@ def create_doctypes():
         {
             "doctype": "DocType",
             "name": "Project Budget Tracker",
-            "module": "interior_erp",
+            "module": "Interior Erp",
             "custom": 1,
             "is_submittable": 1,
             "naming_rule": "Expression",
@@ -166,7 +166,7 @@ def create_doctypes():
         {
             "doctype": "DocType",
             "name": "Employee Scorecard",
-            "module": "interior_erp",
+            "module": "Interior Erp",
             "custom": 1,
             "is_submittable": 1,
             "naming_rule": "Expression",
