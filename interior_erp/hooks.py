@@ -14,7 +14,8 @@ doc_events = {
     }
 }
 
-# doctype_js removed temporarily to bypass build error
+app_include_css = "/assets/interior_erp/css/interior_erp.bundle.css"
+app_include_js = "/assets/interior_erp/js/interior_erp.bundle.js"
 
 scheduler_events = {
     "daily": [
